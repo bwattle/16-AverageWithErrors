@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Average Q24 11yrly 2013</title>
+    <meta charset="utf-8" />
+    <script type="text/javascript">
+        var arrDefault = new Array(5, 4, 3, 6, 2);
+        function arrView() {
+            document.getElementById('arrEntered').value = arrDefault;
+        }
+        function MyAlgorithm() {
+            var myArray = [];
+            myArray = document.getElementById('arrEntered').value.split(","); //fetch array from text box so it can be edited
+            var Total = 0;
+            var i = 1;
+            while (i < myArray.length) {  // loop through FULL list
+                Total = Total + myArray[i - 1];
+                i = i + 1;
+            }
+            Result = Total / myArray.length;
+            document.getElementById('txtMyAlgValue').value = Result;
+            document.getElementById('txtMyArr').value = myArray;
+            document.getElementById('txtTotal').value = Total;
+        }
+    </script>
+</head>
+<body onload="arrView()">
+    <h1>Q24 from the Yr 11 Independent Schools Yearly exam of 2013</h1>
+    <p>Enter the numbers you want for myFunction (separate with commas):</p>
+    <form id="input">
+        <p>
+            <textarea id="arrEntered" rows="1" cols="20"></textarea>
+            <br />
+            <br />
+            <input type="Button" value="Run MyAlgorithm" onclick="MyAlgorithm()" />
+        </p>
+        <p>
+            <br />
+            MyAlgorithm gives this:<br />
+            <textarea id="txtMyAlgValue" rows="1" cols="20"></textarea>
+            <br />
+            The array is here:<br />
+            <textarea id="txtMyArr" rows="3" cols="20"></textarea>
+            <br />
+            The sum of the array numbers is:<br />
+            <textarea id="txtTotal" rows="1" cols="20"></textarea>
+        </p>
+    </form>
+</body>
+</html>
